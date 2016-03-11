@@ -28,3 +28,5 @@ GET	    /getalltasksjson			controllers.TaskController.getAllTasksJSON
 GET	    /cruduipage			     	controllers.TaskController.getCrudUIPage
 
 POST	/inserttaskandreturnjson	controllers.TaskController.insertTaskAndReturnAsJSON()
+
+GET		/rohubdemo					controllers.HomeController.getRohubDemoPage

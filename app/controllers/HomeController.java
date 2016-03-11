@@ -26,5 +26,8 @@ public class HomeController extends Controller {
     	return ok(views.html.hello.render(name));
     }
     
-
+    public Result getRohubDemoPage()
+    {
+    	return ok(views.html.rohubdemopage.render(""));
+    }
 }
