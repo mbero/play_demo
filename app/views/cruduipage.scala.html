@@ -1,0 +1,42 @@
+@* alltaskjsontable Template File *@
+@(test: String)
+
+
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-2.2.1.js")" type="text/javascript"></script>
+        <script src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.js")" type="text/javascript"></script>
+        
+	 	<title>Tasks CRUD UI</title>	
+	</head>
+	<body>
+		<h1>Basic CRUD operations by using EBEAN ORM and IN-MEMORY H2 DATABASE</h1>
+	
+		<h2>Add new randomly generated Task to db</h2>
+		<input type="button" value="Add new random task" onclick="addNewRandomTaskToDB()"/>
+		<br></br>
+		
+		
+		<h1>Get all saved Tasks from db</h1>
+		<input type="button" value="Get all tasks as JSON" onclick="showAllTasksInTable()"/>
+		<br></br>
+		<table id="records_table" border='1'>
+		    <tr>	
+		        <th>Task ID</th>
+		        <th>Task Name</th>
+		        <th>Task Date</th>	
+		    </tr>
+		</table>
+		<br></br>
+		
+		<h2>Delete task with given id from db</h2>
+		<input type="text" name="taskid" id="taskid">
+		<br></br>
+		<input type="button" value="Delete task" onclick="deleteTaskById()"/>
+		
+	</body>
+</html>
