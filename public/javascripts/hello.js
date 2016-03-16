@@ -2,6 +2,55 @@ if (window.console) {
   console.log("Welcome to your Play application's JavaScript!");
 }  
 
+$(document).ready(function(){
+	 $.ajax({
+	      url: '/recentous',
+	      type: 'GET',
+	      data: 
+	      {
+	      },
+	      success: function (response) 
+	      {
+	    		for(var i=0; i<response.length; i++)
+	    	    {
+	    			var currentElementFromResponse = response[i]
+	    			$('#hatch ul').append('<li><a href="#" data-maker="'+currentElementFromResponse+'" data-price="'+currentElementFromResponse+'">'+currentElementFromResponse+'</a></li>'); 
+	    	    }
+	      }
+	  });
+	  $('a').on('click', function(){
+  	    $('#show').html(   'Price : ' + $(this).attr('data-price') + '| Maker : ' +  $(this).attr('data-maker')   );
+  	  });
+
+});
+
+function findROsByKeyword()
+{
+	var keywordFromInput = $('#keyword').val();
+	 $.ajax({
+	      url: '/getousbykeyword',
+	      type: 'GET',
+	      data: 
+	      {
+	    	 keyword : keywordFromInput
+	      },
+	      success: function (response) {
+	    	 // $('#findByKeywordResultTable').remove();
+	    	  $('#findByKeywordResultTable').bootstrapTable({
+	    		    columns: [{
+	    		        field: 'name',
+	    		        title: 'RO Name'
+	    		    }, {
+	    		        field: 'uri',
+	    		        title: 'RO URI'
+	    		    }
+	    		    ],
+	    		    data: response
+	    		});
+	      }
+	  });
+}
+
 function showAllTasksInTable()
 {
 	  var jsonData;
@@ -60,3 +109,5 @@ function deleteTaskById()
 	      }
 	  });
 }
+
+
