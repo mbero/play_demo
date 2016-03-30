@@ -34,8 +34,9 @@ function findROsByKeyword()
 	      {
 	    	 keyword : keywordFromInput
 	      },
-	      success: function (response) {
-	    	 // $('#findByKeywordResultTable').remove();
+	      success: function (response)
+	      {
+	    	  $('#findByKeywordResultTable').bootstrapTable("destroy");
 	    	  $('#findByKeywordResultTable').bootstrapTable({
 	    		    columns: [{
 	    		        field: 'name',

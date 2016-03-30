@@ -6,8 +6,6 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.joda.time.DateTime;
-import org.purl.wf4ever.rosrs.client.Person;
 import org.purl.wf4ever.rosrs.client.ROSRService;
 import org.purl.wf4ever.rosrs.client.ResearchObject;
 import org.purl.wf4ever.rosrs.client.exception.ROException;
@@ -44,7 +42,6 @@ public class ROController extends Controller{
 			Logger.debug("getRecentOUs error", e);
 			e.printStackTrace();
 		}
-		
     	JsonNode json = Json.toJson(listOfRONames);
     	return ok(json);
     }
